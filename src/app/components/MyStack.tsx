@@ -20,7 +20,7 @@ export default function MyStack() {
                 duration: 1,
                 ease: "easeInOut",
                 when: "beforeChildren",
-                delayChildren: stagger(0.2),
+                delayChildren: stagger(0.3),
             },
         },
     };
@@ -33,10 +33,6 @@ export default function MyStack() {
         visible: {
             opacity: 1,
             y: 0,
-            transition: {
-                duration: 0.5,
-                ease: "easeInOut",
-            },
         },
     };
 
@@ -55,39 +51,75 @@ export default function MyStack() {
             </motion.h2>
             <motion.div
                 variants={parent}
+                initial="hidden"
+                animate={inView ? "visible" : "hidden"}
                 className="grid grid-cols-3 grid-rows-2 gap-2 mt-4"
             >
-                <motion.div variants={children}>
-                    <Image src="/next.png" width={100} height={100} alt="next image" />
+                <motion.div 
+                variants={children} 
+                className="bg-white rounded-xl">
+                    <Image 
+                    src="/next.png" 
+                    width={100} 
+                    height={100} 
+                    alt="next image" 
+                    className="rounded-full"/>
                 </motion.div>
 
-                <motion.div variants={children}>
-                    <Image src="/react.png" width={100} height={100} alt="react image" />
+                <motion.div 
+                variants={children} 
+                className=" bg-sky-800 rounded-full relative">
+                    <Image 
+                    src="/react.png" 
+                    fill
+                    objectFit="contain"
+                    alt="react image" 
+                    className=" p-1"/>
                 </motion.div>
 
-                <motion.div variants={children}>
-                    <Image src="/js.png" width={100} height={100} alt="js image" />
+                <motion.div 
+                variants={children} 
+                className="relative">
+                    <Image 
+                    src="/js.png" 
+                    fill
+                    objectFit="contain" 
+                    alt="js image" 
+                    className="rounded-2xl"/>
                 </motion.div>
 
-                <motion.div variants={children}>
+                <motion.div 
+                variants={children} 
+                className="rounded-full relative">
                     <Image
-                        src="/tailwind.png"
-                        width={100}
-                        height={100}
+                        src="/tailwind.webp"
+                        fill
+                        objectFit="contain"
                         alt="tailwind image"
+                        className="rounded-full"
                     />
                 </motion.div>
 
-                <motion.div variants={children}>
-                    <Image src="/mysql.png" width={100} height={100} alt="mysql image" />
+                <motion.div 
+                variants={children} 
+                className="bg-white rounded-xl relative">
+                    <Image 
+                    src="/mysql.webp" 
+                    fill
+                    objectFit="contain"
+                    alt="mysql image" 
+                    className="rounded-full"/>
                 </motion.div>
 
-                <motion.div variants={children}>
+                <motion.div 
+                variants={children} 
+                className="bg-white rounded-xl relative">
                     <Image
-                        src="/docker.png"
-                        width={100}
-                        height={100}
+                        src="/docker.svg"
+                        fill
+                        objectFit="contain"
                         alt="docker image"
+                        className=""
                     />
                 </motion.div>
             </motion.div>
