@@ -1,6 +1,7 @@
 
 'use client'
 import AboutMe from "./components/AboutMe";
+import GetInTouch from "./components/GetInTouch";
 import HeroSection from "./components/HeroSection";
 import MyStack from "./components/MyStack";
 import Projects from "./components/Projects";
@@ -18,6 +19,8 @@ export default function Home() {
       <Projects/>
       
       <MyStack/>
+
+      <GetInTouch/>
     </main>
   );
 }

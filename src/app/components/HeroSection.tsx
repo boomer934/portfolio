@@ -63,13 +63,12 @@ export default function HeroSection() {
       >
         Boomer934
       </motion.h1>
-      <motion.div
-        variants={children}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        transition={{ duration: 1, ease: "easeInOut" }}
-        className=" bg-white h-[1px] w-[95vw]"
-      ></motion.div>
+      <motion.div 
+        ref={ref}
+        initial={{x:0}}
+        animate={inView?{x:[-200,200], opacity:1}:{}}
+        transition={{duration:1, repeat:Infinity, repeatType:"reverse", ease:"easeInOut"}}
+        className='w-[50vw] h-[1px] bg-white mb-10'></motion.div>
       <motion.div
       variants={emojiCash}
       initial="hidden"
