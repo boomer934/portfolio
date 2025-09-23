@@ -1,0 +1,14 @@
+{
+  "projects": [
+    {
+      "name": "Bibo Virtual Assistant",
+      "url": "https://bibo-virtual-assistant.vercel.app/",
+      "description": "Assistente virtuale interattivo basato su chatbot, utile per organizzare task e rispondere a domande.",
+      "technologies": ["Next.js", "React", "TypeScript", "Vercel"],
+      "github": "https://github.com/Boomer934/bibo-virtual-assistant",
+      "year": 2025,
+      "image":"/bibo-intero.png",
+      "category": "AI / Chatbot"
+    }
+  ]
+}
