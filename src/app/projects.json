@@ -1,0 +1,32 @@
+{
+  "projects": [
+    {
+      "name": "Watchlist",
+      "url": "https://watchlist-site.vercel.app/",
+      "description": "Una web app per creare e gestire la tua lista di film e serie TV preferite.",
+      "technologies": ["Next.js", "React", "Tailwind CSS", "Vercel"],
+      "github": "https://github.com/Boomer934/watchlist",
+      "year": 2025,
+      "category": "Web App"
+    },
+    {
+      "name": "Bibo Virtual Assistant",
+      "url": "https://bibo-virtual-assistant.vercel.app/",
+      "description": "Assistente virtuale interattivo basato su chatbot, utile per organizzare task e rispondere a domande.",
+      "technologies": ["Next.js", "React", "TypeScript", "Vercel"],
+      "github": "https://github.com/Boomer934/bibo-virtual-assistant",
+      "year": 2025,
+      "image":"/bibo-intero.png",
+      "category": "AI / Chatbot"
+    },
+    {
+      "name": "Anime Finder",
+      "url": "https://boomer934.github.io/anime-finder/",
+      "description": "Sito per cercare anime online con filtri e dettagli su ogni serie.",
+      "technologies": ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+      "github": "https://github.com/Boomer934/anime-finder",
+      "year": 2025,
+      "category": "Web App"
+    }
+  ]
+}
