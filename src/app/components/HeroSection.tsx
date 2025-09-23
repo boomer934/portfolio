@@ -52,7 +52,7 @@ export default function HeroSection() {
   }
 
   return (
-    <div className="relative flex flex-col items-center w-full">
+    <div className="relative flex flex-col items-center w-full mt-[70px]">
       <motion.h1
         ref={ref}
         variants={children}

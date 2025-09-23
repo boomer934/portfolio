@@ -126,13 +126,15 @@ export default function Projects() {
             whileTap={{ scale: 0.9, rotate: 2 }}
             className="flex justify-center p-6">
               <div className="min-h-[100px] min-w-[200px] scale-110">
-                <Image
-                  src="/portfolio.png"
-                  width={200}
-                  height={200}
-                  alt="Portfolio"
-                  className="shadow-2xl shadow-green-600 rounded-md"
-                />
+                <Link href={"/"} prefetch={true}>
+                  <Image
+                    src="/portfolio.png"
+                    width={200}
+                    height={200}
+                    alt="Portfolio"
+                    className="shadow-2xl shadow-green-600 rounded-md"
+                  />
+                </Link>
               </div>
             </motion.div>
             <p className="p-4">

@@ -96,7 +96,7 @@ export default function GetInTouch() {
             name="email"
             placeholder="e.g email@example.com"
             required
-            className="bg-white focus:outline-none p-1 rounded-xl caret-black text-black placeholder:text-black/80"
+            className="bg-white focus:outline-none p-1 rounded-xl caret-black text-black placeholder:text-black/80 md:px-4 md:py-2"
           />
           <motion.textarea
             value={message}
@@ -109,7 +109,7 @@ export default function GetInTouch() {
           <motion.button
             variants={formChildren}
             type="submit"
-            className="bg-white p-2 rounded-2xl min-w-[80px] max-w-[80px] text-black"
+            className="bg-white p-2 rounded-2xl min-w-[80px] max-w-[80px] text-black hover:scale-105 focus:scale-95 transition duration-300 ease-in-out mb-[60px]"
           >
             Submit
           </motion.button>
