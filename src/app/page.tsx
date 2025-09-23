@@ -2,6 +2,7 @@
 'use client'
 import AboutMe from "./components/AboutMe";
 import HeroSection from "./components/HeroSection";
+import MyStack from "./components/MyStack";
 import Projects from "./components/Projects";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       
       <Projects/>
       
+      <MyStack/>
     </main>
   );
 }

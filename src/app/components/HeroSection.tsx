@@ -11,9 +11,7 @@ export default function HeroSection() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: false });
 
-  useEffect(() => {
-    console.log(inView);
-  }, [inView]);
+  
   const children = {
     visible: {
       opacity: 1,
