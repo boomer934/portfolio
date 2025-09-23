@@ -82,7 +82,10 @@ export default function Projects() {
             >
               Watchlist
             </motion.h3>
-            <motion.div className="flex justify-center p-6">
+            <motion.div 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9, rotate: 2 }}
+            className="flex justify-center p-6">
               <div className="min-h-[100px] min-w-[200px] scale-110">
                 <Link
                   href={"https://watchlist-site.vercel.app/"}
@@ -117,14 +120,17 @@ export default function Projects() {
             >
               Portfolio
             </h3>
-            <motion.div className="flex justify-center p-6">
+            <motion.div 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9, rotate: 2 }}
+            className="flex justify-center p-6">
               <div className="min-h-[100px] min-w-[200px] scale-110">
                 <Image
                   src="/portfolio.png"
                   width={200}
                   height={200}
                   alt="Portfolio"
-                  className="shadow-2xl shadow-blue-600 rounded-md"
+                  className="shadow-2xl shadow-green-600 rounded-md"
                 />
               </div>
             </motion.div>
@@ -146,7 +152,10 @@ export default function Projects() {
             >
               Bibo Virtual Assistant
             </h3>
-            <motion.div className="flex justify-center p-6">
+            <motion.div 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9, rotate: 2 }}
+            className="flex justify-center p-6">
               <div className="min-h-[100px] min-w-[200px] scale-110">
                 <Link
                   href={"https://bibo-virtual-assistant.vercel.app/"}
@@ -157,7 +166,7 @@ export default function Projects() {
                     width={200}
                     height={200}
                     alt="Task Manager"
-                    className="shadow-2xl shadow-green-600 rounded-md min-h-[110px]"
+                    className="shadow-2xl shadow-sky-600 rounded-md min-h-[110px]"
                   />
                 </Link>
               </div>
