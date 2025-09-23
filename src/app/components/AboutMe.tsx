@@ -53,10 +53,10 @@ export default function AboutMe() {
         variants={title}
         initial={"hidden"}
         animate={"visible"}
-        className="text-2xl font-medium w-full text-left"
+        className="text-2xl font-medium w-full text-left sm:text-center md:scale-125"
       >
         {splitH2.map((char, i) => (
-          <motion.span key={i} variants={typeWriter} className="text-white">
+          <motion.span key={i} variants={typeWriter} className="text-white ">
             {char}
           </motion.span>
         ))}
@@ -65,7 +65,7 @@ export default function AboutMe() {
         variants={children}
         initial="hidden"
         animate="visible"
-        className=" bg-gray-900 w-auto p-3 flex flex-col rounded-lg shadow-xl max-w-[470px] hover:outline-2 hover:outline-red-600 focus:outline-2 focus:outline-red-600 ring-1 ring-white"
+        className=" bg-gray-900 w-auto p-3 flex flex-col rounded-lg shadow-xl max-w-[470px] hover:outline-2 hover:outline-red-600 focus:outline-2 focus:outline-red-600 ring-1 ring-white md:scale-125 md:mt-10"
       >
         <motion.div className="flex flex-row gap-2">
           <motion.p variants={children} className=" text-[15px]">

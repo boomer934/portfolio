@@ -4,7 +4,7 @@ import React from "react";
 export default function Header() {
   return (
     <header className="flex flex-row justify-between items-center p-3 bg-violet-300 mb-5">
-      <h2 className="text-white">boomer934</h2>
+      <h2 className="text-white md:scale-125">boomer934</h2>
       <div className=" flex gap-2 items-center">
         Github
         <Image

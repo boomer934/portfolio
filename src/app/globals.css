@@ -8,3 +8,26 @@ html, body {
 main {
   min-height: 100%; /* lascia che cresca in base al contenuto */
 }
+
+.glow-text {
+  position: relative;
+  z-index: 1;
+}
+
+.glow-text::before {
+  content: "";
+  position: absolute;
+  inset: -30px; /* quanto si espande intorno */
+  background: radial-gradient(
+    circle,
+    rgba(131, 58, 180, 0.8) 30%,   /* viola acceso */
+    rgba(253, 29, 29, 0.6) 105%,   /* rosso sfumato */
+    rgba(252, 176, 69, 0.4) 70%,  /* arancione leggero */
+    rgba(0, 0, 0, 0) 100%         /* trasparente completo */
+  );
+  filter: blur(20px); /* sfocatura glow */
+  z-index: -1;
+  border-radius: 50%;
+}
+
+

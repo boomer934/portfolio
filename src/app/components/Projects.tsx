@@ -63,7 +63,7 @@ export default function Projects() {
           initial={{ opacity: 0, y: -6 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="w-full text-center text-2xl font-medium mt-16"
+          className="w-full text-center text-2xl font-medium mt-16 md:scale-125"
         >
           My projects
         </motion.h2>

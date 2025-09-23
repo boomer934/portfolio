@@ -46,7 +46,7 @@ export default function MyStack() {
             className="w-full h-auto grid mb-12"
         >
             <motion.h2
-                className={`text-center text-2xl font-medium ${montserrat.className}`}
+                className={`text-center text-2xl font-medium ${montserrat.className} md:scale-125`}
             >
                 My Stack
             </motion.h2>
@@ -54,13 +54,13 @@ export default function MyStack() {
                 variants={parent}
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
-                className="grid grid-cols-3 grid-rows-2 gap-4 mt-4"
+                className="grid grid-cols-3 grid-rows-2 gap-4 mt-4 ml-auto mr-auto"
             >
                 <motion.div 
                 variants={children}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9, rotate: 2 }} 
-                className="bg-white rounded-xl hover:shadow-2xl hover:shadow-white">
+                className="bg-white rounded-xl hover:shadow-2xl hover:shadow-white sm:min-w-[150px] sm:min-h-[150px] lg:min-w-[200px] lg:min-h-[200px] flex items-center justify-center">
                     <Link href={"https://nextjs.org/"} target="_blank" prefetch={true}>
                         <Image 
                         src="/next.png" 
@@ -75,13 +75,13 @@ export default function MyStack() {
                 variants={children} 
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9, rotate: 2 }}
-                className=" bg-sky-800 rounded-full relative hover:shadow-2xl hover:shadow-sky-800">
+                className=" bg-sky-800 rounded-full relative hover:shadow-2xl hover:shadow-sky-800 sm:min-w-[160px] sm:min-h-[150px] lg:min-w-[220px] lg:min-h-[200px]">
                     <Link href={"https://react.dev/"} target="_blank" prefetch={true}>
                         <Image 
                         src="/react.png" 
                         fill
                         alt="react image" 
-                        className=" p-1"/>
+                        className=" p-3"/>
                     </Link>
                 </motion.div>
 
@@ -89,7 +89,7 @@ export default function MyStack() {
                 variants={children} 
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9, rotate: 2 }}
-                className="relative hover:shadow-2xl hover:shadow-yellow-300 rounded-2xl">
+                className="relative hover:shadow-2xl hover:shadow-yellow-300 rounded-2xl sm:min-w-[150px] sm:min-h-[150px] lg:min-w-[200px] lg:min-h-[200px]">
                     <Link href={"https://developer.mozilla.org/en-US/docs/Web/JavaScript"} target="_blank" prefetch={true}>
                         <Image 
                         src="/js.png" 
@@ -103,7 +103,7 @@ export default function MyStack() {
                 variants={children} 
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9, rotate: 2 }}
-                className="rounded-full relative hover:shadow-2xl hover:shadow-sky-800">
+                className="rounded-full relative hover:shadow-2xl hover:shadow-sky-800 sm:min-w-[150px] sm:min-h-[150px] lg:min-w-[200px] lg:min-h-[200px]">
                     <Link href={"https://www.tailwindcss.com/"} target="_blank" prefetch={true}>
                         <Image
                             src="/tailwind.webp"
@@ -118,13 +118,13 @@ export default function MyStack() {
                 variants={children}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9, rotate: 2 }} 
-                className="bg-white rounded-xl relative hover:shadow-2xl hover:shadow-white">
+                className="bg-white rounded-xl relative hover:shadow-2xl hover:shadow-white sm:min-w-[150px] sm:min-h-[150px] lg:min-w-[200px] lg:min-h-[200px]">
                     <Link href={"https://www.mysql.com/it/"} target="_blank" prefetch={true}>
                         <Image
                             src="/mysql.webp"
                             fill
                             alt="mysql image"
-                            className="rounded-full"
+                            className="rounded-full p-2"
                         />
                     </Link>
                 </motion.div>
@@ -133,12 +133,13 @@ export default function MyStack() {
                 variants={children}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9, rotate: 2 }} 
-                className="bg-white rounded-xl relative hover:shadow-2xl hover:shadow-white">
+                className="bg-white rounded-xl relative hover:shadow-2xl hover:shadow-white sm:min-w-[150px] sm:min-h-[150px] lg:min-w-[200px] lg:min-h-[200px]">
                     <Link href={"https://www.docker.com/"} target="_blank" prefetch={true}>
                         <Image
                             src="/docker.svg"
                             fill
                             alt="docker image"
+                            className="p-2"
                         />
                     </Link>
                 </motion.div>
