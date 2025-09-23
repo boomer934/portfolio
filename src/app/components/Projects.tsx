@@ -75,7 +75,7 @@ export default function Projects() {
             ref={ref}
             variants={containerVariants}
             animate={inView ? "visible" : "hidden"}
-            className="bg-gray-900 rounded-lg overflow-hidden"
+            className="bg-gray-900 rounded-lg overflow-hidden hover:shadow-2xl hover:shadow-red-600 hover:outline-2 hover:outline-red-600 hover:outline-offset-2"
           >
             <motion.h3
               className={`bg-gray-800 p-4 text-lg font-bold ${montserrat.className}`}
@@ -90,6 +90,7 @@ export default function Projects() {
                 <Link
                   href={"https://watchlist-site.vercel.app/"}
                   target="_blank"
+                  prefetch={true}
                 >
                   <Image
                     src="/watchlist.png"
@@ -113,7 +114,7 @@ export default function Projects() {
             ref={ref2}
             animate={inView2 ? "visible" : "hidden"}
             variants={containerVariants}
-            className="bg-gray-900 rounded-lg overflow-hidden"
+            className="bg-gray-900 rounded-lg overflow-hidden hover:shadow-2xl hover:shadow-green-600 hover:outline-2 hover:outline-green-600 hover:outline-offset-2"
           >
             <h3
               className={`bg-gray-800 p-4 text-lg font-bold ${montserrat.className}`}
@@ -145,7 +146,7 @@ export default function Projects() {
             ref={ref3}
             animate={inView3 ? "visible" : "hidden"}
             variants={containerVariants}
-            className="bg-gray-900 rounded-lg overflow-hidden"
+            className="bg-gray-900 rounded-lg overflow-hidden hover:shadow-2xl hover:shadow-sky-600 hover:outline-2 hover:outline-sky-600 hover:outline-offset-2"
           >
             <h3
               className={`bg-gray-800 p-4 text-lg font-bold ${montserrat.className}`}
@@ -160,6 +161,7 @@ export default function Projects() {
                 <Link
                   href={"https://bibo-virtual-assistant.vercel.app/"}
                   target="_blank"
+                  prefetch={true}
                 >
                   <Image
                     src="/bibo-intero.png"
