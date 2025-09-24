@@ -8,6 +8,7 @@ const pool = mysql2.createPool({
   port: Number(process.env.DB_PORT),
   waitForConnections: true,
   connectionLimit: 5,
+  connectTimeout: 30000,      // 30 secondi per la connessione
 });
 
 export async function POST(request: Request) {
@@ -27,11 +28,17 @@ export async function POST(request: Request) {
     }
     
     console.log("🔗 Tentativo di connessione al DB...");
-    const [result] = await pool.query(
+    
+    // Test connessione
+    const connection = await pool.getConnection();
+    console.log("✅ Connessione ottenuta");
+    
+    const [result] = await connection.query(
       "INSERT INTO Information (email) VALUES (?)",
       [email]
     );
     
+    connection.release();
     console.log("✅ Inserimento DB riuscito:", result);
     
     return new Response(
