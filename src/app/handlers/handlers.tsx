@@ -12,10 +12,6 @@ export default async function handleSubmit({
   setEmail: React.Dispatch<SetStateAction<string>>;
   setMessage: React.Dispatch<SetStateAction<string>>;
 }) {
-  if (!email || !message?.trim()) {
-    console.error("Email o message mancanti");
-    return { status: "error", message: "Email o message mancanti" };
-  }
 
   try {
     const res = await axios.post("/api/information", { email, message });
