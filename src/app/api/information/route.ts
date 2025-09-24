@@ -50,7 +50,7 @@ export async function POST(request: Request) {
     const [result] = await connection.execute(
       "INSERT INTO Information (email) VALUES (?)",
       [email]
-    );
+    ) as any[];
     
     console.log("✅ Inserimento DB riuscito:", result);
     
