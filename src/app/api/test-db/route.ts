@@ -34,7 +34,7 @@ export async function GET() {
       console.log(`🔧 Testing ${name}...`);
       
       const connection = await mysql2.createConnection(config);
-      const [rows] = await connection.execute('SELECT 1 as test, NOW() as current_time');
+      const [rows] = await connection.execute('SELECT 1 as test, NOW() as current_timestamp');
       await connection.end();
 
       results.push({
