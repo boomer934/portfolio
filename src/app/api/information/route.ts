@@ -13,38 +13,35 @@ const pool = mysql2.createPool({
 export async function POST(request: Request) {
   try {
     console.log("📥 Ricevuta richiesta POST");
-
     const body = await request.json();
     console.log("📄 Body ricevuto:", body);
-
-    const { email, message } = body;
-
-    if (!email || !message) {
-      console.warn("⚠️ Mancano email o message");
+    
+    const { email } = body;
+    
+    if (!email) {
+      console.warn("⚠️ Manca email");
       return new Response(
-        JSON.stringify({ status: "error", message: "Email o message mancanti" }),
+        JSON.stringify({ status: "error", message: "Email mancante" }),
         { status: 400, headers: { "Content-Type": "application/json" } }
       );
     }
-
+    
     console.log("🔗 Tentativo di connessione al DB...");
-
     const [result] = await pool.query(
-      "INSERT INTO Information (email, message) VALUES (?, ?)",
-      [email, message]
+      "INSERT INTO Information (email) VALUES (?)",
+      [email]
     );
-
+    
     console.log("✅ Inserimento DB riuscito:", result);
-
+    
     return new Response(
-      JSON.stringify({ status: "success", email, message }),
+      JSON.stringify({ status: "success", email }),
       { status: 200, headers: { "Content-Type": "application/json" } }
     );
-
+    
   } catch (error: any) {
     console.error("❌ ERRORE:", error.message);
     console.error("Stack trace:", error.stack);
-
     return new Response(
       JSON.stringify({ status: "error", message: error.message }),
       { status: 500, headers: { "Content-Type": "application/json" } }
