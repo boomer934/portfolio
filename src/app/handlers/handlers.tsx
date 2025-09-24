@@ -8,9 +8,9 @@ export default async function handleSubmit({
   setMessage,
 }: {
   email: string;
-  message: string | undefined;
+  message: string;
   setEmail: React.Dispatch<SetStateAction<string>>;
-  setMessage: React.Dispatch<SetStateAction<string | undefined>>;
+  setMessage: React.Dispatch<SetStateAction<string>>;
 }) {
   if (!email || !message?.trim()) {
     console.error("Email o message mancanti");

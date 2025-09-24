@@ -12,7 +12,7 @@ export default function GetInTouch() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: false });
   const [email, setEmail] = useState<string>("");
-  const [message, setMessage] = useState<string | undefined>("");
+  const [message, setMessage] = useState<string>("");
 
   const char = "Get in touch".split("");
 
