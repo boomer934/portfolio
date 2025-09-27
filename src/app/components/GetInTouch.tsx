@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, Variants } from "framer-motion";
 import { useInView } from "framer-motion";
 import { stagger } from "framer-motion";
@@ -13,6 +13,23 @@ export default function GetInTouch() {
   const inView = useInView(ref, { once: false });
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
+  const [send,setSend] = useState<boolean>(false)
+  const refForm = useRef<HTMLButtonElement>(null);
+
+
+  useEffect(()=>{
+    if(send){
+      if(refForm.current){
+        refForm.current.classList.remove("bg-white")
+        refForm.current.classList.add("bg-sky-400")
+      }
+      const timer = setTimeout(() => {
+        setSend(false)
+      },3000)
+      return () => clearTimeout(timer)
+    }
+  },[send])
+
 
   const char = "Get in touch".split("");
 
@@ -81,7 +98,7 @@ export default function GetInTouch() {
         <motion.form
           onSubmit={(e) => {
             e.preventDefault();
-            handleSubmit({ email, message, setEmail, setMessage });
+            handleSubmit({ email, message, setEmail, setMessage , setSend});
           }}
           variants={parent}
           initial="hidden"
@@ -109,9 +126,10 @@ export default function GetInTouch() {
           <motion.button
             variants={formChildren}
             type="submit"
-            className="bg-white p-2 rounded-2xl min-w-[80px] max-w-[80px] text-black hover:scale-105 focus:scale-95 transition duration-300 ease-in-out mb-[60px]"
+            ref={refForm}
+            className={`bg-white p-2 rounded-2xl min-w-[80px] max-w-[80px] text-black hover:scale-105 focus:scale-95 transition duration-300 ease-in-out mb-[60px] ${send ? "bg-green-500" : ""}`}
           >
-            Submit
+            {!send ? "Submit" : "Sent!"}
           </motion.button>
         </motion.form>
       </motion.div>

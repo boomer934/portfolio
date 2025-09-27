@@ -41,7 +41,7 @@ export default function AboutMe() {
   };
 
   const text =
-    " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus, laborum esse ex iste sit harum sequi libero, voluptatibus minima eos, vero excepturi dicta temporibus sunt quod doloribus quam explicabo culpa.";
+    "Sono uno sviluppatore appassionato di web e software, con esperienza in Node.js, Python, React e database. Amo costruire applicazioni web funzionali, imparare nuove tecnologie e affrontare sfide complesse.";
   const splitText = text.split("");
 
   const h2 = "About me";

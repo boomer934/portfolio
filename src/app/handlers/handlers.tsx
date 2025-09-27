@@ -6,11 +6,13 @@ export default async function handleSubmit({
   message,
   setEmail,
   setMessage,
+  setSend
 }: {
   email: string;
   message: string;
   setEmail: React.Dispatch<SetStateAction<string>>;
   setMessage: React.Dispatch<SetStateAction<string>>;
+  setSend: React.Dispatch<SetStateAction<boolean>>
 }) {
 
   try {
@@ -18,6 +20,7 @@ export default async function handleSubmit({
     // Reset dopo la richiesta
     setEmail("");
     setMessage("");
+    setSend(true)
     return res.data;
   } catch (error: any) {
     console.error("Errore API:", error.response?.data || error.message);
