@@ -1,17 +1,23 @@
-FROM node:22.19
+# Base image
+FROM node:20-alpine
 
-COPY public /app/public
-COPY src /app/
-COPY .gitignore /app/
-COPY next-env.d.ts /app/
-COPY package.json /app/
-COPY package-lock.json /app/
-COPY postcss.config.mjs /app/
-COPY README.md /app/
-COPY tsconfig.json /app/
-
+# Set working directory
 WORKDIR /app
 
-RUN npm install 
+# Copy package.json & lock
+COPY package*.json ./
 
-CMD [ "npm", "run", "dev" ]
+# Install dependencies
+RUN npm install
+
+# Copy all files
+COPY . .
+
+# Build Next.js
+RUN npm run build
+
+# Expose port
+EXPOSE 3000
+
+# Run the app
+CMD ["npm", "start"]

@@ -1,19 +1,22 @@
-import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
-async function POST(request:Request) {
-  const { email , message} = await request.json();
+import prisma from "@/lib/prisma/prisma";
+export async function POST(request:Request) {
+  const body = request.body
   try {
-    const user = await prisma.user.create({
+    const { email, message } = await request.json();
+
+    const user = await prisma?.user.create({
       data:{
-        email:email,
-        message:message
+        email,
+        message
       }
     })
-    return new Response(JSON.stringify({status:200,message:"utente aggiunto con successo"}))
-  } catch (error) {
-    console.error("Error:", error);
+
+    return new Response(JSON.stringify({ status: 200, message: "Utente aggiunto con successo" }), { status: 200 });
+  } catch (error: any) {
+    console.error("Errore Prisma:", error);
+    return new Response(JSON.stringify({ status: 500, error: error.message || error }), { status: 500 });
   }
   finally{
-    prisma.$disconnect()
+    prisma?.$disconnect()
   }
 }
