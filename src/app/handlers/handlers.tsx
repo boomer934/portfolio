@@ -14,7 +14,7 @@ export default async function handleSubmit({
 }) {
 
   try {
-    const res = await axios.post("/api/information", { email, message });
+    const res = await axios.post("/api/test-db", { email, message });
     // Reset dopo la richiesta
     setEmail("");
     setMessage("");
