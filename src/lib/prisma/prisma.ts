@@ -5,14 +5,14 @@ declare global {
   var prisma: PrismaClient | undefined;
 }
 
-if (!global.prisma) {
-  prisma = new PrismaClient();
-  // @ts-ignore
-  global.prisma = prisma;
-} else {
-  // @ts-ignore
-  prisma = global.prisma;
-}
+const globalForPrisma = globalThis as unknown as { prisma: PrismaClient };
 
+export const prisma =
+  globalForPrisma.prisma ||
+  new PrismaClient({
+    log: ["query", "error", "warn"],
+  });
+
+if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
 
 export default prisma;
